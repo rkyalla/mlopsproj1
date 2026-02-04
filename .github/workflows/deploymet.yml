@@ -39,12 +39,12 @@ jobs:
           KUBECONFIG: C:\Users\yrkre\.kube\config
 
       - name: deploy application via yaml file
-        run: kubectl apply -f C:\Users\santo\Documents\projects\devops_project_1\deploy.yml
+        run: kubectl apply -f L:\vscode\Projmlops1\mlopsproj1\deployment.yml
         env:
           KUBECONFIG: C:\Users\yrkre\.kube\config
 
       - name: deploy service via yaml file
-        run: kubectl apply -f C:\Users\santo\Documents\projects\devops_project_1\service.yml
+        run: kubectl apply -f L:\vscode\Projmlops1\mlopsproj1\service.yml
         env:
           KUBECONFIG: C:\Users\yrkre\.kube\config
 
