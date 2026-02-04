@@ -25,4 +25,32 @@ jobs:
         run: |
              docker push ramkyalla/web-app:v1
 
+  deploy-application-to-kubernetes:
+    runs-on: windows
+    steps:
+      - name: check the connectivity
+        run: kubectl cluster-info
+        env:
+          KUBECONFIG: C:\Users\yrkre\.kube\config
+
+      - name: list the pods
+        run: kubectl get pods -A
+        env:
+          KUBECONFIG: C:\Users\yrkre\.kube\config
+
+      - name: deploy application via yaml file
+        run: kubectl apply -f C:\Users\santo\Documents\projects\devops_project_1\deploy.yml
+        env:
+          KUBECONFIG: C:\Users\yrkre\.kube\config
+
+      - name: deploy service via yaml file
+        run: kubectl apply -f C:\Users\santo\Documents\projects\devops_project_1\service.yml
+        env:
+          KUBECONFIG: C:\Users\yrkre\.kube\config
+
+          
+      - name: list the pods
+        run: kubectl get pods -A
+        env:
+          KUBECONFIG: C:\Users\yrkre\.kube\config 
        
